@@ -93,13 +93,14 @@ SpriteSheetClass = Class.extend({
         // Parse the input 'atlasJSON' using the
         // JSON.parse method and store it in a
         // variable.
-		console.log(atlasJSON);
+
         var parsed = JSON.parse(atlasJSON);
 
         // For each sprite in the parsed JSON,
         // 'chaingun.png', chaingun_impact.png',
         // etc....
-		for(var key in parsed.frames) {
+		//for(var key in parsed.frames) {
+		for(var key = 0; key < parsed.frames.length; key++){
             // Grab the sprite from the parsed JSON...
 			var sprite = parsed.frames[key];
 
@@ -115,8 +116,7 @@ SpriteSheetClass = Class.extend({
             // 'trimmed' parameter in the parsed JSON. Look
             // through the provided JSON if you're unsure
             // where this is.
-			//
-			// If it is trimmed, then we need to update the
+            // If it is trimmed, then we need to update the
             // center offset based upon how much data has
             // been trimmed off of it.
             //
@@ -136,50 +136,8 @@ SpriteSheetClass = Class.extend({
             // this for a bit. If it's done right, you shouldn't
             // have to change any other code at all!
             //
-			/*
-			"filename": "trimRobot2.png",
-			"frame": {"x":147,"y":1,"w":68,"h":69},
-			"rotated": true,
-			"trimmed": true,
-			"spriteSourceSize": {"x":66,"y":65,"w":68,"h":69},
-			"sourceSize": {"w":200,"h":200},
-			"pivot": {"x":0.5,"y":0.5}
-			*/
-			/*
-			{
-				"filename": "trimRobot1.png",
-				"frame": {"x":76,"y":1,"w":69,"h":68},
-				"rotated": false,
-				"trimmed": true,
-				"spriteSourceSize": {"x":12,"y":16,"w":69,"h":68},
-				"sourceSize": {"w":200,"h":200},
-				"pivot": {"x":0.5,"y":0.5}
-			},
-			{
-				"filename": "trimRobot2.png",
-				"frame": {"x":147,"y":1,"w":68,"h":69},
-				"rotated": true,
-				"trimmed": true,
-				"spriteSourceSize": {"x":118,"y":18,"w":68,"h":69},
-				"sourceSize": {"w":200,"h":200},
-				"pivot": {"x":0.5,"y":0.5}
-			},
-			{
-				"filename": "trimRobot3.png",
-				"frame": {"x":1,"y":1,"w":63,"h":73},
-				"rotated": true,
-				"trimmed": true,
-				"spriteSourceSize": {"x":136,"y":122,"w":63,"h":73},
-				"sourceSize": {"w":200,"h":200},
-				"pivot": {"x":0.5,"y":0.5}
-			}],
-			*/
-		}
-			if(sprite.trimmed === true){
-				cx = sprite.spriteSourceSize.x - (sprite.sourceSize.w * 0.5);
-				cy = sprite.spriteSourceSize.y - (sprite.sourceSize.h * 0.5);
+            // YOUR CODE HERE
 
-			}
 
 			// Define the sprite for this sheet by calling
             // defSprite to store it into the 'sprites' Array.
@@ -221,8 +179,8 @@ function drawSprite(spritename, posX, posY) {
         // Use the getStats method of the spritesheet
         // to find if a sprite with name 'spritename'
         // exists in that sheet...
-		var sheet = gSpriteSheets[sheetName];
-		var sprite = sheet.getStats(spritename);
+		//var sheet = gSpriteSheets[sheetName];
+		var sprite = gSpriteSheets.getStats(spritename);
 
         // If we find the appropriate sprite, call
         // '__drawSpriteInternal' with parameters as
@@ -232,7 +190,7 @@ function drawSprite(spritename, posX, posY) {
             continue;
         }
 
-		__drawSpriteInternal(sprite, sheet, posX, posY);
+		__drawSpriteInternal(sprite, gSpriteSheets, posX, posY);
 
         // Once we've called __drawSpriteInternal, we
         // assume there isn't another sprite of the
