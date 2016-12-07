@@ -1,0 +1,39 @@
+{"frames": [
+
+{
+	"filename": "trimRobot1.png",
+	"frame": {"x":76,"y":1,"w":69,"h":68},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":16,"w":69,"h":68},
+	"sourceSize": {"w":200,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "trimRobot2.png",
+	"frame": {"x":147,"y":1,"w":68,"h":69},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":118,"y":18,"w":68,"h":69},
+	"sourceSize": {"w":200,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "trimRobot3.png",
+	"frame": {"x":1,"y":1,"w":63,"h":73},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":136,"y":122,"w":63,"h":73},
+	"sourceSize": {"w":200,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "robotsTrim.png",
+	"format": "RGBA8888",
+	"size": {"w":217,"h":70},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:2124c0d6eb89e7a82e923836b2081586:f36aa609ef8741cb847aff861ffee4dc:f385005620e23efc7ca4aab757453911$"
+}
+}
