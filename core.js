@@ -165,3 +165,5 @@ newGuid_short = function () {
 	};
 	return (S4()).toString();
 };
+
+	
