@@ -59,7 +59,7 @@ var TILEDMapClass = Class.extend({
         xhrGet(map, function (data) {
             // Once the XMLHttpRequest loads, call the
             // parseMapJSON method.
-            gMap.parseMapJSON(data.responseText);
+            gMap.parseMapJSON(data.currentTarget.response);
         });
     },
 
@@ -67,7 +67,12 @@ var TILEDMapClass = Class.extend({
     parseMapJSON: function (mapJSON) {
         // Call JSON.parse on 'mapJSON' and store
         // the resulting map data
-        gMap.currMapData = JSON.parse(mapJSON);
+		if(! mapJSON){
+			console.log('Error! Empty JSON!');
+			return false;
+		}
+
+        gMap.currMapData = mapJSON;// JSON.parse(mapJSON);
 
         var map = gMap.currMapData;
 
